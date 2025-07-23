@@ -461,7 +461,7 @@ a.platform-logo {
 // but keep them narrow to match the report sidebar
 body.authpage {
   .content {
-    width: 27em;
+    max-width: 27em;
     margin-#{$left}: auto;
     margin-#{$right}: auto;
   }
@@ -745,6 +745,16 @@ body.authpage {
     display: block;
     font-size: 80%;
     padding-top: 0.5em;
+  }
+}
+
+.my-account-preferences-list--email,
+.my-account-preferences-list--phone {
+  flex-direction: row;
+  align-items: center;
+
+  a.btn {
+    padding: 0.5em 1em;
   }
 }
 

@@ -41,6 +41,12 @@ sub council_area { 'Aberdeenshire' }
 sub council_name { 'Aberdeenshire Council' }
 sub council_url { 'aberdeenshire' }
 
+=item * We do not show reports made before go-live on 2025-06-25.
+
+=cut
+
+sub cut_off_date { '2025-06-25' }
+
 =item * Users with a Aberdeenshire.gov.uk email can always be found in the admin.
 
 =cut
@@ -144,29 +150,29 @@ sub open311_update_missing_data {
         }
     }
 
-    # A bunch of Confirm attributes are required but Aberdeenshire don't want them
-    # shown to the user, so here we set a default value for them as necessary.
-    my %defaults = (
-        MR01 => 'n/a',
-        MR02 => 'n/a',
-        Q29 => 'YES',
-        Q31 => 'NK', # not known
-        Q33 => 'NK',
-        Q36 => 'NK',
-        Q37 => 'NK',
-        Q38 => 'NK',
-        Q39 => 'NK',
-        Q43 => 'NK',
-        ST03 => 'BLNK', # blank
-        WM01 => 'NK',
-    );
-    foreach (keys %defaults) {
-        my $v = $defaults{$_};
-        if ($contact->get_extra_field(code => $_)  && !$row->get_extra_field_value($_)) {
-            $row->update_extra_field({ name => $_, value => $v });
-        }
+    # Q29 isn't shown to the user, but its default value depends on the category
+    if ($contact->get_extra_field(code => 'Q29')  && !$row->get_extra_field_value('Q29')) {
+        $row->update_extra_field({ name => 'Q29', value => ($contact->category eq 'Property/Vehicle Damage') ? 'YES' : 'NO' });
     }
 }
+
+=head2 open311_munge_update_params
+
+We pass any category change.
+
+=cut
+
+sub open311_munge_update_params {
+    my ( $self, $params, $comment ) = @_;
+
+    my $p = $comment->problem;
+
+    if ( $comment->text =~ /Category changed/ ) {
+        my $service_code = $p->contact->email;
+        $params->{service_code} = $service_code;
+    }
+}
+
 
 =head2 open311_config
 
@@ -248,5 +254,83 @@ sub lookup_site_code_config {
     };
 }
 
+=head2 problems_restriction/problems_sql_restriction/problems_on_map_restriction
+
+Reports made on FMS.com before the cut off date are not shown on the Aberdeenshire cobrand;
+however if a report was fetched over Open311 it is shown regardless of the cut off date.
+
+=cut
+
+sub problems_restriction {
+    my ($self, $rs) = @_;
+    return $rs if FixMyStreet->staging_flag('skip_checks');
+
+    $rs = $rs->to_body($self->body);
+
+    my $date = $self->cut_off_date;
+    my $table = ref $rs eq 'FixMyStreet::DB::ResultSet::Nearby' ? 'problem' : 'me';
+    return $rs->search([
+        { "$table.created" => { '>=', $date } },
+        { "$table.service" => 'Open311' },
+    ]);
+}
+
+sub problems_sql_restriction {
+    my ($self, $item_table) = @_;
+    my $date = $self->cut_off_date;
+    if ($item_table ne 'comment') {
+        return " AND ( created >= '$date' OR service = 'Open311' )";
+    } else {
+        return " AND created >= '$date'";
+    }
+}
+
+sub problems_on_map_restriction {
+    my ($self, $rs) = @_;
+    my $date = $self->cut_off_date;
+    my $table = ref $rs eq 'FixMyStreet::DB::ResultSet::Nearby' ? 'problem' : 'me';
+    return $rs->search([
+        { "$table.created" => { '>=', $date } },
+        { "$table.service" => 'Open311' },
+    ]);
+}
+
+=head2 dashboard_export_problems_add_columns
+
+Aberdeenshire include the external ID of reports in the CSV export
+
+=cut
+
+sub dashboard_export_problems_add_columns {
+    my ($self, $csv) = @_;
+
+    $csv->add_csv_columns(
+        external_id => 'Confirm ID',
+    );
+
+    return if $csv->dbi;
+
+    $csv->csv_extra_data(sub {
+        my $report = shift;
+
+        return {
+            external_id => $report->external_id,
+        };
+    });
+}
+
+=head2 skip_alert_state_changed_to
+
+Aberdeenshire don't want the state of the report to be shown in update emails.
+
+=cut
+
+sub skip_alert_state_changed_to { 1 }
+
+=item * Map starts at zoom level 5, closer than default and not based on population density.
+
+=cut
+
+sub default_map_zoom { 5 }
 
 1;

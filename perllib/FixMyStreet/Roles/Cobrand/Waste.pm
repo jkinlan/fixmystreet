@@ -15,6 +15,7 @@ sub bin_payment_types {
         'credit_card' => 2,
         'direct_debit' => 3,
         'cheque' => 4,
+        'waived' => 5,
     };
 }
 
@@ -71,6 +72,15 @@ sub svg_container_box {
         recycling_logo => $recycling_logo,
     };
 }
+
+=head2 waste_suggest_retry_on_no_property_data
+
+Whether or not to show a page suggesting the user retries later
+if we're not able to retrieve data for the property.
+
+=cut
+
+sub waste_suggest_retry_on_no_property_data { 0 }
 
 # Garden related
 
