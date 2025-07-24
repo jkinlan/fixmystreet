@@ -261,7 +261,7 @@ RECAPTCHA: ''
 
 # If you want to use SMS login or 'report as' with just a phone number, you'll
 # need to set the site's two-digit ISO 3166 country code (e.g. GB) here.
-PHONE_COUNTRY: ''
+PHONE_COUNTRY: '+353'
 
 # If you enable login via SMS authentication, you'll need a twilio account or a
 # GOV.UK Notify account
