@@ -191,7 +191,7 @@ MAP_TYPE: 'OSM'
 # This also allows development servers to map to different cobrands if needed,
 # using DNS subdomains for example.
 ALLOWED_COBRANDS:
-  - civlink
+  - civlink: 'hostname_substring2'
 
 # This is used in e.g. "offensive report" emails to provide a link directly to
 # the admin interface. Defaults to BASE_URL with "/admin" on the end.
