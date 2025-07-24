@@ -56,7 +56,7 @@ a {
   }
 
   span {
-    background-color: #fff;
+    background-color: $primary;
     color: $primary_text;
   }
 }
@@ -112,7 +112,6 @@ a {
 }
 
 /* SITE MESSAGE */
-// Found here: https://www.aberdeenshire.gov.uk/schools/music-lessons/music-tuition
 .site-message {
   color: $primary_b;
   padding: 1.5rem;
