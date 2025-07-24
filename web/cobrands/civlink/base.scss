@@ -51,12 +51,12 @@ a {
     text-decoration: none;
 
     &:visited {
-      color: #fff;
+      color: $primary;
     }
   }
 
   span {
-    background-color: $primary;
+    background-color: $cobrand_primary_light;
     color: $primary_text;
   }
 }
