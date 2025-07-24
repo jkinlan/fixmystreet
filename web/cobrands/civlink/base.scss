@@ -1,16 +1,8 @@
 @import "../sass/h5bp";
-@import "./_colours";
 @import "_variables";
 @import "../sass/mixins";
 
 @import "../sass/base";
-
-
-/* NAVBAR */
-#site-logo {
-  background-image: url("/cobrands/civlink/civlink_logo.png");
-  background-size: auto 3rem;
-}
 
 /*TYPOGRAPHY */
 h1, .h1 {
