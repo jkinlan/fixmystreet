@@ -35,13 +35,13 @@ CONTENT_SECURITY_POLICY: ''
 # this to a e.g. space-separated list of domains or a list of the same.
 
 # Email domain used for emails, and contact name/email for admin use.
-EMAIL_DOMAIN: 'example.org'
-CONTACT_EMAIL: 'team@example.org'
-CONTACT_NAME: 'FixMyStreet'
+EMAIL_DOMAIN: 'kravemedia.ie'
+CONTACT_EMAIL: 'jkinlan@kravemedia.ie'
+CONTACT_NAME: 'CivLink'
 # Address used for emails you don't expect a reply to (e.g. confirmation
 # emails); can be same as CONTACT_EMAIL above, of course, if you don't have a
 # special address.
-DO_NOT_REPLY_EMAIL: 'do-not-reply@example.org'
+DO_NOT_REPLY_EMAIL: 'do-not-reply@ekravemedia.ie'
 
 # Whether this is a development site or not. It will mean e.g. templates/
 # CSS modified times aren't cached
@@ -60,7 +60,7 @@ STAGING_FLAGS:
 
 # What to use as front page/alert example places placeholder
 # Defaults to High Street, Main Street
-EXAMPLE_PLACES: [ 'High Street', 'Main Street' ]
+EXAMPLE_PLACES: [ 'Mount Temple', 'Moate' ]
 
 # An array of languages for the site, in the following format:
 # <language code>,<pretty name>,<locale>
