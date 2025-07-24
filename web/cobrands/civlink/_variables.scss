@@ -1,4 +1,3 @@
-
 /* COLOURS */
 $cobrand_blue: #004289; // Links and buttons
 $cobrand_blue_hover: #0000b4;
@@ -11,7 +10,7 @@ $cobrand_yellow: #ffd744;
 $cobrand_purple: #8c4e8d; // buttons colour
 $cobrand_purple_darker: #60377d;
 
-$primary: $cobrand_white;
+$primary: $cobrand_blue;
 $yellow: $cobrand_yellow;
 
 $primary_b: $cobrand_black;
@@ -25,7 +24,7 @@ $layout_front_stats_color: $primary_b;
 
 /* LINKS */
 $primary_link_color: $cobrand_blue;
-$primary_link_hover_color: #f1f1f1;
+$primary_link_hover_color: #2e8aca;
 $primary_link_decoration: underline;
 $primary_link_hover_decoration: underline;
 
@@ -70,7 +69,7 @@ $meta-font: Verdana,Geneva,Tahoma,sans-serif;
 /* NAVBAR */
 
 $nav_colour: $primary;
-$nav_background_colour: #008AD8;
+$nav_background_colour: $cobrand_white;
 $nav_hover_background_colour: transparent;
 
 $mappage-header-height: 5.625rem;
