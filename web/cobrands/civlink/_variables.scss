@@ -8,8 +8,8 @@ $cobrand_grey: #f1f1f1;
 $cobrand_black: #212529;
 $cobrand_yellow_darker: #d6ac11;
 $cobrand_yellow: #fad25a;
-$cobrand_purple: #8c4e8d; // buttons colour
-$cobrand_purple_darker: #d6ac11;
+$cobrand_purple: #8c4e8d; 
+$cobrand_purple_darker: #fad25a;
 
 $primary: $cobrand_blue;
 $yellow: $cobrand_yellow;
@@ -49,13 +49,13 @@ a#geolocate_link {
     @include focus-state;
 }
 */
-$button-primary-bg-top: $cobrand_yellow;
-$button-primary-bg-bottom: $cobrand_yellow;
-$button-primary-border: $cobrand_yellow;
+$button-primary-bg-top: $cobrand_yellow_darker;
+$button-primary-bg-bottom: $cobrand_yellow_darker;
+$button-primary-border: $cobrand_yellow_darker;
 $button-primary-text: $primary_text;
-$button-primary-hover-bg-bottom: $cobrand_yellow_darker;
-$button-primary-hover-bg-top: $cobrand_yellow_darker;
-$button-primary-hover-border: $cobrand_yellow_darker;
+$button-primary-hover-bg-bottom: $cobrand_yellow;
+$button-primary-hover-bg-top: $cobrand_yellow;
+$button-primary-hover-border: $cobrand_yellow;
 $button-primary-hover-text: $primary_text;
 
 $geolocation-link: $primary;
