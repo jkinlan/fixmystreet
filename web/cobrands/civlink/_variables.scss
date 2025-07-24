@@ -1,12 +1,13 @@
 /* COLOURS */
 $cobrand_blue: #004289; // Links and buttons
 $cobrand_blue_hover: #0000b4;
-$cobrand_primary_light: #0081c9;
+$cobrand_primary_light: #008AD8;
 $cobrand_red: #c0232e;
 $cobrand_white: #fff;
 $cobrand_grey: #f1f1f1;
 $cobrand_black: #212529;
-$cobrand_yellow: #ffd744;
+$cobrand_yellow_darker: #d6ac11;
+$cobrand_yellow: #fad25a;
 $cobrand_purple: #8c4e8d; // buttons colour
 $cobrand_purple_darker: #60377d;
 
@@ -48,13 +49,13 @@ a#geolocate_link {
     @include focus-state;
 }
 */
-$button-primary-bg-top: $cobrand_purple;
-$button-primary-bg-bottom: $cobrand_purple;
-$button-primary-border: $cobrand_purple;
+$button-primary-bg-top: $cobrand_yellow;
+$button-primary-bg-bottom: $cobrand_yellow;
+$button-primary-border: $cobrand_yellow;
 $button-primary-text: $primary_text;
-$button-primary-hover-bg-bottom: $cobrand_purple_darker;
-$button-primary-hover-bg-top: $cobrand_purple_darker;
-$button-primary-hover-border: $cobrand_purple_darker;
+$button-primary-hover-bg-bottom: $cobrand_yellow_darker;
+$button-primary-hover-bg-top: $cobrand_yellow_darker;
+$button-primary-hover-border: $cobrand_yellow_darker;
 $button-primary-hover-text: $primary_text;
 
 $geolocation-link: $primary;
@@ -69,7 +70,7 @@ $meta-font: Verdana,Geneva,Tahoma,sans-serif;
 /* NAVBAR */
 
 $nav_colour: $primary;
-$nav_background_colour: $cobrand_white;
+$nav_background_colour: $cobrand_primary_light;
 $nav_hover_background_colour: transparent;
 
 $mappage-header-height: 5.625rem;
