@@ -45,7 +45,7 @@ DO_NOT_REPLY_EMAIL: 'do-not-reply@ekravemedia.ie'
 
 # Whether this is a development site or not. It will mean e.g. templates/
 # CSS modified times aren't cached
-STAGING_SITE: 0
+STAGING_SITE: 1
 # Developers may want a staging site to act differently from a live site.
 # Possible flags include:
 # - send_reports: Normally, a staging site will route all reports to the
