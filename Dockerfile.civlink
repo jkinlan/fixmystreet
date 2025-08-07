@@ -1,0 +1,27 @@
+FROM debian:bullseye-slim
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    perl \
+    make \
+    gcc \
+    libssl-dev \
+    libexpat1-dev \
+    libperl-dev \
+    cpanminus \
+    nginx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create app directory
+WORKDIR /app
+
+# Copy source code into container
+COPY . .
+
+# Install Perl modules
+RUN cpanm --installdeps .
+
+# Default command (adjust if you use another entrypoint like starman or morbo)
+CMD ["perl", "bin/fixmystreet", "daemon", "--listen", "http://*:8080"]
