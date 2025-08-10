@@ -1,14 +1,13 @@
 @import "_colours";
 @import "../sass/layout";
 
-/* Make sure nav is always on top and full width */
 #main-nav {
   background-color: #008AD8;
   position: relative;
+  z-index: 1000;
   width: 100%;
   display: flex;
-  justify-content: center; /* Center the menu horizontally */
-  padding: 1rem 0;
+  justify-content: center;
 }
 
 /* Center the UL contents */
