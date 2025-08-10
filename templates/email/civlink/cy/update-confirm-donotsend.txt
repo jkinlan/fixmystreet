@@ -1,3 +1,0 @@
-Sylwch nad ydym yn anfon diweddariadau at [% update.problem.body %] - sydd
-o fwriad yn lle i ddefnyddwyr [% site_name %]
-drafod, cefnogi a chynnig cyngor.
