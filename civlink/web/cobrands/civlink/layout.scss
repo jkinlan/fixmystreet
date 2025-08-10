@@ -8,32 +8,33 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
+  overflow-x: hidden;
 }
 
-/* Center the UL contents */
 #main-nav .nav-menu--main {
   list-style: none;
   display: flex;
-  gap: 1.5rem; /* Space between menu items */
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow: visible;
 }
 
-/* Menu links */
 #main-nav .nav-menu--main a {
-  color: white; /* Match .App-header a */
+  color: white;
   text-decoration: none;
   font-size: calc(10px + 2vmin);
   font-weight: 500;
 }
 
-/* Accessibility: highlight current page span */
 #main-nav .nav-menu--main span {
   color: white;
   font-weight: bold;
 }
 
-/* Optional: hover effect */
 #main-nav .nav-menu--main a:hover {
   text-decoration: underline;
 }
