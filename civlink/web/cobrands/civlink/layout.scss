@@ -1,2 +1,41 @@
 @import "_colours";
 @import "../sass/layout";
+
+/* Make sure nav is always on top and full width */
+#main-nav {
+  background-color: #008AD8; /* Match .App-header */
+  position: relative; /* Or fixed if you want it to stick to the top */
+  z-index: 1000; /* Keeps it above other elements */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the menu horizontally */
+  padding: 1rem 0;
+}
+
+/* Center the UL contents */
+#main-nav .nav-menu--main {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Space between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu links */
+#main-nav .nav-menu--main a {
+  color: white; /* Match .App-header a */
+  text-decoration: none;
+  font-size: calc(10px + 2vmin);
+  font-weight: 500;
+}
+
+/* Accessibility: highlight current page span */
+#main-nav .nav-menu--main span {
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional: hover effect */
+#main-nav .nav-menu--main a:hover {
+  text-decoration: underline;
+}
