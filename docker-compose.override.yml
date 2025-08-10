@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  fixmystreet:
+    volumes:
+      - /web/cobrands/civlink:/var/www/fixmystreet/cobrand
