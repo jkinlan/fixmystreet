@@ -3,9 +3,8 @@
 
 /* Make sure nav is always on top and full width */
 #main-nav {
-  background-color: #008AD8; /* Match .App-header */
-  position: relative; /* Or fixed if you want it to stick to the top */
-  z-index: 1000; /* Keeps it above other elements */
+  background-color: #008AD8;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center; /* Center the menu horizontally */
