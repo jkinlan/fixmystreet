@@ -48,7 +48,7 @@ DO_NOT_REPLY_EMAIL: 'help@127.0.0.1.xip.io'
 
 # Whether this is a development site or not. It will mean e.g. templates/
 # CSS modified times aren't cached
-STAGING_SITE: 1
+STAGING_SITE: 0
 # Developers may want a staging site to act differently from a live site.
 # Possible flags include:
 # - send_reports: Normally, a staging site will route all reports to the
@@ -194,7 +194,9 @@ MAP_TYPE: 'OSM'
 # This also allows development servers to map to different cobrands if needed,
 # using DNS subdomains for example.
 ALLOWED_COBRANDS:
-  - civlink
+  - cobrand1
+  - cobrand2: 'hostname_substring2'
+  - cobrand3
 
 # This is used in e.g. "offensive report" emails to provide a link directly to
 # the admin interface. Defaults to BASE_URL with "/admin" on the end.
