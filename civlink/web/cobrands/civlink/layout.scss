@@ -1,36 +1,33 @@
 @import "_colours";
 @import "../sass/layout";
 
-/* Make nav fill width and center */
 #main-nav {
   background-color: #008AD8;
   display: flex;
   justify-content: center;
-  margin: .5rem 0; /* Removed side margin so it spans fully */
+  margin: .5rem 0;
   gap: .5rem;
   width: 100%;
+  position: relative;
 }
 
-/* UL takes full width and spreads items evenly */
 #main-nav .nav-menu--main {
   background-color: #008AD8;
   display: flex;
-  justify-content: space-evenly; /* Spread across full width */
+  justify-content: space-evenly; 
   align-items: stretch;
-  margin: 0; /* Remove margins that cause off-center look */
+  margin: 0; 
   padding: 0;
   list-style: none;
   width: 100%;
   gap: .5rem;
 }
 
-/* Make each LI flex and share available space */
 #main-nav .nav-menu--main li {
-  flex: 1; /* Equal width for all items */
+  flex: 1; 
   display: flex;
 }
 
-/* Make the links fill their LI */
 #main-nav .nav-menu--main a {
   background-color: #0072c6;
   color: white;
@@ -44,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Fill LI */
+  width: 100%; 
   box-sizing: border-box;
 }
 
