@@ -1,41 +1,45 @@
 @import "_colours";
 @import "../sass/layout";
 
-/* Ensure nav takes full width */
 #main-nav {
   background-color: #008AD8;
-  width: 100%;
-  z-index: 1000;
-  position: relative;
-  padding: 1rem 0;
-}
-
-/* Style the UL */
-#main-nav .nav-menu--main {
-  list-style: none;
   display: flex;
-  justify-content: center; /* Center items in the row */
-  gap: 2rem; /* Space between menu items */
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  justify-content: center;
+  margin: .5rem;
+  gap: .5rem;
 }
 
-/* Alternative: spread items evenly across the whole width */
-#main-nav .nav-menu--main.full-width {
-  justify-content: space-evenly; /* Equal space between items */
+#main-nav .nav-menu--main {
+  background-color: #008AD8;
+  display: flex;
+  justify-content: center;
+  margin: .5rem;
+  gap: .5rem;
 }
 
-/* Menu links */
 #main-nav .nav-menu--main a {
+  background-color: #0072c6;
   color: white;
+  padding: 1rem 1rem;
+  text-align: center;
   text-decoration: none;
-  font-size: calc(10px + 2vmin);
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  box-sizing: border-box;
 }
 
-/* Highlight current page */
 #main-nav .nav-menu--main span {
   color: white;
   font-weight: bold;
+}
+
+#main-nav .nav-menu--main a:hover {
+  background-color: #0062a8;
+  transform: scale(1.015);
 }
