@@ -23,6 +23,10 @@ body{
     background-color: #008AD8;
 }
 
+::selection{
+    background: #fff;
+}
+
 #front-main{
     color: #008AD8;
 }
