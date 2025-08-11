@@ -13,10 +13,11 @@ main, #content, .content-wrapper {
   background-color: #008AD8;
   display: flex;
   justify-content: center;
-  margin: .5rem 0;
   gap: .5rem;
   width: 100%;
-  position: fixed;
+  position: relative;
+  margin: 0;
+  padding: .5rem 0;
 }
 
 #main-nav .nav-menu--main {
