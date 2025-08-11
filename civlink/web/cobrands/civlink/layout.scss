@@ -11,6 +11,18 @@
   position: relative;
 }
 
+.nav-wrapper{
+    position: relative;
+}
+
+#main-nav{
+    height: 70px;
+}
+
+body{
+    background-color: #008AD8;
+}
+
 #main-nav .nav-menu--main {
   background-color: #008AD8;
   display: flex;
