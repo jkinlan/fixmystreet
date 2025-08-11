@@ -1,6 +1,14 @@
 @import "_colours";
 @import "../sass/layout";
 
+body {
+  margin: 0;
+}
+
+main, #content, .content-wrapper {
+  margin-top: 80px; /* Match nav height */
+}
+
 #main-nav {
   background-color: #008AD8;
   display: flex;
