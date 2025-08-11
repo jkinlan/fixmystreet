@@ -39,12 +39,29 @@ body{
   gap: .5rem;
 }
 
-#main-nav .nav-menu--main li {
+#main-nav li {
   flex: 1; 
   display: flex;
 }
 
-#main-nav .nav-menu--main a {
+#main-nav a {
+  background-color: #0072c6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(46, 18, 18, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+#main-nav span {
   background-color: #0072c6;
   color: white;
   padding: 1rem;
@@ -61,24 +78,7 @@ body{
   box-sizing: border-box;
 }
 
-#main-nav .nav-menu--main span {
-  background-color: #0072c6;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%; 
-  box-sizing: border-box;
-}
-
-#main-nav .nav-menu--main a:hover {
+#main-nav a:hover {
   background-color: #0062a8;
   transform: scale(1.015);
 }
