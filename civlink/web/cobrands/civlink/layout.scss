@@ -5,6 +5,7 @@
   background-color: #008AD8;
   display: flex;
   justify-content: center;
+  margin: .5rem 0;
   gap: .5rem;
   width: 100%;
   position: relative;
@@ -54,6 +55,6 @@
   transform: scale(1.015);
 }
 
-main, #content, .content-wrapper, #front-main {
+main, #content, .content-wrapper, #front-main, .container {
   margin-top: 80px;
 }
