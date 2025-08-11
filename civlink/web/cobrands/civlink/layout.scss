@@ -16,7 +16,7 @@
 }
 
 #main-nav{
-    height: 140px;
+    height: 140px !important;
 }
 
 body{
@@ -25,10 +25,6 @@ body{
 
 ::selection{
     background: #fff;
-}
-
-#front-main{
-    color: #008AD8;
 }
 
 #main-nav .nav-menu--main {
