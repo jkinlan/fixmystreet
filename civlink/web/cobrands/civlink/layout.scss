@@ -16,10 +16,6 @@
     top: 0px !important;
 }
 
-#main-nav{
-    height: 140px !important;
-}
-
 body{
     background-color: #008AD8;
 }
@@ -38,6 +34,7 @@ body{
   list-style: none;
   width: 100%;
   gap: .5rem;
+  height: 0px !important;
 }
 
 #main-nav li {
