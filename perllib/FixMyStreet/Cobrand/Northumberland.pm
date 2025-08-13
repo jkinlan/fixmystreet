@@ -76,6 +76,8 @@ sub pin_colour {
     return 'orange'; # all the other `open_states` like "in progress"
 }
 
+sub has_aerial_maps { 'tilma.mysociety.org/mapcache/gmaps/northumberlandaerial@osmaps' }
+
 =item * Hovering over a pin includes the state as well as the title
 
 =cut
@@ -104,22 +106,11 @@ sub contact_extra_fields { [ 'display_name' ] }
 
 sub abuse_reports_only { 1 }
 
-=item * Only staff can reopen reports
+=item * Users cannot reopen reports
 
 =cut
 
-sub reopening_disallowed {
-    my ($self, $problem) = @_;
-
-    # Check if reopening is disallowed by the category
-    return 1 if $self->next::method($problem);
-
-    # Only staff can reopen reports.
-    my $c = $self->{c};
-    my $user = $c->user;
-    return 0 if ($c->user_exists && $user->from_body && $user->from_body->cobrand_name eq $self->council_name);
-    return 1;
-}
+sub reopening_disallowed { 1 }
 
 =item * Staff Only - Out Of Hours categories are treated as cleaning categories for National Highways
 
